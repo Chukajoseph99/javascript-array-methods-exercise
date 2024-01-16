@@ -34,12 +34,18 @@
 // console.log(decreasingOrder([5, 2, 1, -10, 8]))
 
 // // Copy and sort array
-// let arr = ["HTML", "JavaScript", "CSS"];
-// let copyArray = arr
-// copyArray.sort();
+let arr = ["HTML", "JavaScript", "CSS"];
+let copyArray = Array.from(arr)
+copyArray.sort();
 
-// console.log(copyArray)
+console.log(copyArray)
+console.log(arr);
 
+function JavaScript(){
+  return console.log("hello world");
+}
+
+JavaScript();
 
 // // Map to names
 // let john = { name: "John", age: 25 };
@@ -83,33 +89,139 @@
 
 
 
- // Filter range "in place"
-    function filterRangeInPlace(arr, a, b){
-        for(let i = 0; i < arr.length; i++){
-            if(arr[i] < a || arr[i] > b){
-                arr.splice(i, 1);
-                i--;
-            }
-        }
+//  // Filter range "in place"
+//     function filterRangeInPlace(arr, a, b){
+//         for(let i = 0; i < arr.length; i++){
+//             if(arr[i] < a || arr[i] > b){
+//                 arr.splice(i, 1);
+//                 i--;
+//             }
+//         }
+//     }
+
+// let arr = [2, 6, 9, 10, 12, 14];
+// filterRangeInPlace(arr, 5, 10);
+
+// console.log(arr); 
+
+
+
+// //Shuffle An Array
+// function shuffle(array){
+//     for(let i = 0; i < array.length; i++){
+//         let random = Math.floor(Math.random() * array.length);
+
+//         let temp = array[i];
+//         array[i] = array[random];
+//         array[random] = temp;
+//     }
+//     return array;
+// }
+
+// console.log(shuffle([1,2,3]))
+
+
+// //Get Average Age
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 29 };
+
+// let arr = [ john.age, pete.age, mary.age ];
+
+// let total = 0;
+
+// function getAverageAge(users){
+// for(let i = 0; i < arr.length; i++){
+//     total += arr[i];
+// }
+// let averageAge = total / arr.length;
+
+// return averageAge;
+// }
+
+// console.log(getAverageAge(arr));
+
+
+// // Filter unique array members
+  
+//   let strings = ["Hare", "Krishna", "Hare", "Krishna",
+//     "Krishna", "Krishna", "Hare", "Hare", ":-O"];
+  
+  
+//   function unique(arr) {
+//     let uniqueArray = [];
+//     for(let i = 0; i < arr.length; i++){
+//         if(!uniqueArray.includes(arr[i])){
+//          uniqueArray.push(arr[i]);
+//         }
+//          return uniqueArray;
+//     }
+//   }
+
+//   console.log(unique(strings));
+
+
+// Create keyed objects from Array
+
+let users = [
+    {id: 'john', name: "John Smith", age: 20},
+    {id: 'ann', name: "Ann Smith", age: 24},
+    {id: 'pete', name: "Pete Peterson", age: 31},
+  ];
+  
+
+function groupById(arr){
+    let obj = {};
+    for(let i = 0; i < arr.length; i++){
+
+        const item = arr[i];
+        const id = item.id;
+        obj[id] = item;
+    
     }
-
-let arr = [2, 6, 9, 10, 12, 14];
-filterRangeInPlace(arr, 5, 10);
-
-console.log(arr); 
-
-
-
-//Shuffle An Array
-function shuffle(array){
-    for(let i = 0; i < array.length; i++){
-        let random = Math.floor(Math.random() * array.length);
-
-        let temp = array[i];
-        array[i] = array[random];
-        array[random] = temp;
-    }
-    return array;
+    return obj;
 }
 
-console.log(shuffle([1,2,3]))
+console.log(groupById(users))
+
+
+//Calculator
+const add = function(a, b) {
+    return a + b;
+};
+
+const subtract = function(a, b) {
+    return a - b;
+};
+
+const sum = function(arr) {
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++){
+        sum += arr[i];
+    }
+    return sum;
+};
+
+const multiply = function(arr) {
+    let multiply = 1;
+    for(let i = 0; i < arr.length; i++){
+        multiply *= arr[i];
+    }
+    return multiply;
+};
+console.log(multiply([1,2,4]));
+
+const power = function(a, b) {
+    return Math.pow(a, b);
+};
+console.log(power(3,4));
+
+const factorial = function(num) {
+    let factorialNum = 1;
+    for(let i = 1; i <= num; i++){
+        factorialNum *= i
+    }
+
+    return factorialNum;
+};
+console.log(factorial(3));
